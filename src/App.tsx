@@ -6,6 +6,7 @@ import { TeamSelect } from './pages/TeamSelect';
 import { TeamDashboard } from './pages/TeamDashboard';
 import { Result } from './pages/Result';
 import { History } from './pages/History';
+import { Profile } from './pages/Profile';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="kitchen" element={<Kitchen />} />
           <Route path="team" element={<TeamDashboard />} />
           <Route path="history" element={<History />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

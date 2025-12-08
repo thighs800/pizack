@@ -35,7 +35,7 @@ export function TeamDashboard() {
     return (
         <div className="space-y-8">
             {/* Header */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-orange-100 flex justify-between items-center">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-orange-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <h1 className="text-2xl font-black text-gray-800 flex items-center gap-3">
                         <span className="text-3xl">🏢</span>
@@ -43,9 +43,26 @@ export function TeamDashboard() {
                     </h1>
                     <p className="text-gray-500 mt-1 ml-11">メンバー: 4名 | 本日の総配達数: {members.reduce((acc, m) => acc + m.orders.length, 0)}枚</p>
                 </div>
-                <div className="bg-orange-100 text-orange-700 px-4 py-2 rounded-lg font-bold flex items-center gap-2">
-                    <Trophy className="w-5 h-5" />
-                    チームランク: ゴールド
+
+                <div className="flex items-center gap-4">
+                    {/* Invite Code */}
+                    <div className="bg-gray-50 px-4 py-2 rounded-lg border border-gray-200 flex flex-col items-end">
+                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Invite Code</span>
+                        <div className="flex items-center gap-2">
+                            <span className="font-mono font-bold text-lg text-gray-700">PIZZA-8888</span>
+                            <button
+                                className="text-xs bg-white border border-gray-200 px-2 py-1 rounded hover:bg-gray-50 font-bold text-gray-500"
+                                onClick={() => navigator.clipboard.writeText('PIZZA-8888')}
+                            >
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="bg-orange-100 text-orange-700 px-4 py-2 rounded-lg font-bold flex items-center gap-2">
+                        <Trophy className="w-5 h-5" />
+                        チームランク: ゴールド
+                    </div>
                 </div>
             </div>
 
