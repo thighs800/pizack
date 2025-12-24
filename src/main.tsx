@@ -4,11 +4,14 @@ import './index.css'
 import App from './App.tsx'
 
 import { PizzaProvider } from './hooks/usePizzaStore'
+import { AuthProvider } from './contexts/AuthContext'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <PizzaProvider>
-      <App />
-    </PizzaProvider>
+    <AuthProvider>
+      <PizzaProvider>
+        <App />
+      </PizzaProvider>
+    </AuthProvider>
   </StrictMode>,
 )
